@@ -8,6 +8,8 @@ As well as all the standard javascript functions, the BetterSet adds these set o
  * intersection
  * complement
  * difference
+ * addAll
+ * deleteAll
 
 It also includes convenience functions which mimic Array behaviour.
  * map
