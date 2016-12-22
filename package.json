@@ -1,0 +1,30 @@
+{
+  "name": "betterset",
+  "version": "1.0.0",
+  "description": "An extension of the javascript Set object which contains useful Set operation methods",
+  "main": "index.js",
+  "scripts": {
+    "test": "node_modules/mocha/bin/mocha --harmony --recursive -t 40000 test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/strongpauly/BetterSet.git"
+  },
+  "keywords": [
+    "Set",
+    "union",
+    "intersection",
+    "javascript"
+  ],
+  "author": "Paul Potsides",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/strongpauly/BetterSet/issues"
+  },
+  "homepage": "https://github.com/strongpauly/BetterSet#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-as-promised": "^6.0.0",
+    "mocha": "^3.2.0"
+  }
+}
