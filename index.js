@@ -23,11 +23,8 @@ module.exports = (function () {
     /**
      * Deletes all items from this set.
      */
-    deleteAll (iterable) {
-      if (!iterable || typeof iterable.forEach !== 'function') {
-        return
-      }
-      iterable.forEach(item => {
+    deleteAll () {
+      this.forEach(item => {
         this.delete(item)
       })
     }

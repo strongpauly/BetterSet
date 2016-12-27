@@ -52,6 +52,7 @@ describe('Set', function () {
     setIter.next().value.should.eql(['foobar', 'foobar'])
     setIter.next().value.should.eql([1, 1])
     setIter.next().value.should.eql(['baz', 'baz'])
+    setIter.next().done.should.equal(true)
   })
 
   it('items should be iterable via values function', () => {
@@ -64,6 +65,7 @@ describe('Set', function () {
     setIter.next().value.should.eql('foobar')
     setIter.next().value.should.eql(1)
     setIter.next().value.should.eql('baz')
+    setIter.next().done.should.equal(true)
   })
 
   it('items should be iterable via keys function', () => {
@@ -76,6 +78,7 @@ describe('Set', function () {
     setIter.next().value.should.eql('foobar')
     setIter.next().value.should.eql(1)
     setIter.next().value.should.eql('baz')
+    setIter.next().done.should.equal(true)
   })
 
   it('items should be iterable via forEach function', (done) => {
@@ -113,6 +116,7 @@ describe('Set', function () {
     setIter.next().value.should.eql(4)
     setIter.next().value.should.eql(5)
     setIter.next().value.should.eql(6)
+    setIter.next().done.should.equal(true)
   })
 
   it('should be able to be intersectioned', () => {
@@ -122,6 +126,7 @@ describe('Set', function () {
     let setIter = setC.keys()
     setIter.next().value.should.eql(4)
     setIter.next().value.should.eql(5)
+    setIter.next().done.should.equal(true)
     setA.size.should.equal(5)
     setB.size.should.equal(3)
     setC.size.should.equal(2)
@@ -135,6 +140,7 @@ describe('Set', function () {
     setIter.next().value.should.eql(1)
     setIter.next().value.should.eql(2)
     setIter.next().value.should.eql(3)
+    setIter.next().done.should.equal(true)
     setA.size.should.equal(5)
     setB.size.should.equal(3)
     setC.size.should.equal(3)
@@ -149,6 +155,7 @@ describe('Set', function () {
     setIter.next().value.should.eql(2)
     setIter.next().value.should.eql(3)
     setIter.next().value.should.eql(6)
+    setIter.next().done.should.equal(true)
     setA.size.should.equal(5)
     setB.size.should.equal(3)
     setC.size.should.equal(4)
@@ -164,6 +171,38 @@ describe('Set', function () {
     setIter.next().value.should.eql(4)
     setIter.next().value.should.eql(5)
     setIter.next().value.should.eql(6)
+    setIter.next().done.should.equal(true)
+  })
+
+  it('should not error if passed nothing into addAll', () => {
+    let set = new Set([1, 2, 3])
+    set.addAll()
+    let setIter = set.values()
+    setIter.next().value.should.eql(1)
+    setIter.next().value.should.eql(2)
+    setIter.next().value.should.eql(3)
+  })
+
+  it('should not error if passed non-iterable into addAll', () => {
+    let set = new Set([1, 2, 3])
+    set.addAll(4)
+    let setIter = set.values()
+    setIter.next().value.should.eql(1)
+    setIter.next().value.should.eql(2)
+    setIter.next().value.should.eql(3)
+    setIter.next().done.should.equal(true)
+  })
+
+  it('should remove all items from deleteAll', () => {
+    let set = new Set([1, 2, 3])
+    let setIter = set.values()
+    setIter.next().value.should.eql(1)
+    setIter.next().value.should.eql(2)
+    setIter.next().value.should.eql(3)
+    set.deleteAll()
+    set.size.should.equal(0)
+    setIter = set.values()
+    setIter.next().done.should.equal(true)
   })
 
   it('should be mappable into another set.', () => {
@@ -173,6 +212,7 @@ describe('Set', function () {
     setIter.next().value.should.eql(2)
     setIter.next().value.should.eql(4)
     setIter.next().value.should.eql(6)
+    setIter.next().done.should.equal(true)
   })
 
   it('should be reduceable.', () => {
