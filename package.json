@@ -1,11 +1,12 @@
 {
   "name": "betterset",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An extension of the javascript Set object which contains useful Set operation methods",
-  "main": "index.js",
+  "main": "./build/index.js",
   "scripts": {
-    "test": "standard && node_modules/mocha/bin/mocha --harmony --recursive -t 40000 test",
-    "cover": "istanbul cover node_modules/.bin/_mocha -- -- -u exports -R spec test/**/*"
+    "build": "babel src --out-dir ./build",
+    "test": "node_modules/mocha/bin/mocha --harmony --recursive -t 40000 test",
+    "coverage": "istanbul cover node_modules/.bin/_mocha -- -- -u exports -R spec test/**/*"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,9 @@
   },
   "homepage": "https://github.com/strongpauly/BetterSet#readme",
   "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-plugin-transform-es2015-classes": "^6.24.1",
+    "babel-preset-env": "^1.6.0",
     "chai": "^3.5.0",
     "chai-as-promised": "^6.0.0",
     "istanbul": "^0.4.5",

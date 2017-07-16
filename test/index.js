@@ -9,7 +9,7 @@ let chai = require('chai')
 let chaiAsPromised = require('chai-as-promised')
 
 // Get utilities.
-let Set = require('../index.js')
+let Set = require('../src/index.js')
 
 chai.use(chaiAsPromised)
 chai.should()
