@@ -6,7 +6,8 @@
   "scripts": {
     "build": "babel src --out-dir ./lib",
     "test": "node_modules/mocha/bin/mocha --harmony --recursive -t 40000 test",
-    "coverage": "istanbul cover node_modules/.bin/_mocha -- -- -u exports -R spec test/**/*"
+    "coverage": "istanbul cover node_modules/.bin/_mocha -- -- -u exports -R spec test/**/*",
+    "coveralls": "npm run coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
   "repository": {
     "type": "git",
@@ -33,6 +34,7 @@
     "chai-as-promised": "^6.0.0",
     "istanbul": "^0.4.5",
     "mocha": "^3.2.0",
-    "standard": "^8.6.0"
+    "standard": "^8.6.0",
+    "coveralls": "^2.13.1"
   }
 }
