@@ -84,6 +84,21 @@ module.exports = (function () {
       return newSet
     }
 
+    equals (otherSet) {
+      if (this === otherSet) {
+        return true
+      } else if (!(otherSet instanceof BetterSet) || this.size !== otherSet.size) {
+        return false
+      } else {
+        for (let value of this.values()) {
+          if (!otherSet.has(value)) {
+            return false
+          }
+        }
+        return true
+      }
+    }
+
     /**
      * Convenience function turning this into an array.
      */
@@ -104,6 +119,7 @@ module.exports = (function () {
     reduce (reduceFunction, initialValue) {
       return this.asArray().reduce(reduceFunction, initialValue)
     }
+
   }
   return BetterSet
 }())

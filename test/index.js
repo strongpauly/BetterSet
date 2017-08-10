@@ -220,4 +220,15 @@ describe('Set', function () {
     let result = set.reduce((lastItem, item) => lastItem + item, 0)
     result.should.equal(6)
   })
+
+  it('should allow comparison with equals function', () => {
+    let set = new Set([1, 2, 3])
+    set.equals(set).should.eql(true)
+    set.equals('A String').should.equal(false)
+    set.equals(new Set([1, 2, 3])).should.eql(true)
+    set.equals(new Set([3, 2, 1])).should.eql(true)
+    set.equals(new Set([1, 2])).should.eql(false)
+    set.equals(new Set([1, 2, 4])).should.eql(false)
+    set.equals({size: 3}).should.eql(false)
+  })
 })
