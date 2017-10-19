@@ -33,8 +33,7 @@ module.exports = (function () {
      * Returns a union of this set with another Set or iterable.
      */
     union (otherSet) {
-      let newSet = new BetterSet()
-      newSet.addAll(this)
+      let newSet = new BetterSet(this)
       newSet.addAll(otherSet)
       return newSet
     }
