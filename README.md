@@ -18,3 +18,5 @@ It also includes convenience functions which mimic Array behaviour.
 
  [![Build Status](https://travis-ci.org/strongpauly/BetterSet.svg?branch=master)](https://travis-ci.org/strongpauly/BetterSet)
 [![Coverage Status](https://coveralls.io/repos/github/strongpauly/BetterSet/badge.svg?branch=master)](https://coveralls.io/github/strongpauly/BetterSet?branch=master)
+[![Dependencies](https://david-dm.org/strongpauly/BetterSet.svg)](https://david-dm.org/strongpauly/BetterSet.svg)
+[![Dependencies](https://david-dm.org/strongpauly/BetterSet/dev-status.svg)](https://david-dm.org/strongpauly/BetterSet.svg?type=dev)

@@ -38,9 +38,9 @@ module.exports = (function () {
       return newSet
     }
 
-        /**
-         * Returns an intersection of this set with another Set.
-         */
+    /**
+     * Returns an intersection of this set with another Set.
+     */
     intersection (otherSet) {
       let newSet = new BetterSet()
       this.forEach(item => {
