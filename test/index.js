@@ -1,15 +1,13 @@
-'use strict'
 /* eslint-env node, mocha */
 /* jslint node: true */
 
 // Chai
-let chai = require('chai')
+import chai from 'chai';
 
 // Chai Promises
-let chaiAsPromised = require('chai-as-promised')
+import chaiAsPromised from 'chai-as-promised';
 
-// Get utilities.
-let Set = require('../src/index.js')
+import Set from '../src/index.js';
 
 chai.use(chaiAsPromised)
 chai.should()
