@@ -1,6 +1,6 @@
 {
   "name": "betterset",
-  "version": "1.0.4",
+  "version": "2.0.0",
   "description": "An extension of the javascript Set object which contains useful Set operation methods",
   "main": "./lib/index.js",
   "types": "./src/main.d.ts",
