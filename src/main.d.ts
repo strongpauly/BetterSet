@@ -1,5 +1,5 @@
 
-declare class BetterSet<T> extends Set<T> {
+export default class BetterSet<T> extends Set<T> {
     addAll: (iterable:Iterable<T>) => void;
     deleteAll: () => void;
     union(otherSet:Set<T>): BetterSet<T>
