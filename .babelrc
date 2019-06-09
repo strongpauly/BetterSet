@@ -1,10 +1,12 @@
 {
-  "presets": ["env"],
+  "presets": ["@babel/preset-env"],
   "plugins": [
     [
-      "babel-plugin-transform-builtin-extend", {
-            "globals": ["Set"]
-        }
+      "babel-plugin-transform-builtin-extend",
+      {
+        "globals": ["Set"]
+      }
     ],
-    "transform-es2015-modules-commonjs"]
+    "@babel/transform-modules-commonjs"
+  ]
 }

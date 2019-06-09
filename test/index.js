@@ -144,10 +144,39 @@ describe('Set', function () {
     setC.size.should.equal(3)
   })
 
+  it('should be able to be relative complemented', () => {
+    let setA = new Set([1, 2, 3, 4, 5])
+    let setB = new Set([4, 5, 6])
+    let setC = setA.relativeComplement(setB)
+    let setIter = setC.keys()
+    setIter.next().value.should.eql(1)
+    setIter.next().value.should.eql(2)
+    setIter.next().value.should.eql(3)
+    setIter.next().done.should.equal(true)
+    setA.size.should.equal(5)
+    setB.size.should.equal(3)
+    setC.size.should.equal(3)
+  })
+
   it('should be able to be differenced', () => {
     let setA = new Set([1, 2, 3, 4, 5])
     let setB = new Set([4, 5, 6])
     let setC = setA.difference(setB)
+    let setIter = setC.keys()
+    setIter.next().value.should.eql(1)
+    setIter.next().value.should.eql(2)
+    setIter.next().value.should.eql(3)
+    setIter.next().value.should.eql(6)
+    setIter.next().done.should.equal(true)
+    setA.size.should.equal(5)
+    setB.size.should.equal(3)
+    setC.size.should.equal(4)
+  })
+
+  it('should be able to be disjunctiveUnion', () => {
+    let setA = new Set([1, 2, 3, 4, 5])
+    let setB = new Set([4, 5, 6])
+    let setC = setA.disjunctiveUnion(setB)
     let setIter = setC.keys()
     setIter.next().value.should.eql(1)
     setIter.next().value.should.eql(2)
@@ -179,6 +208,7 @@ describe('Set', function () {
     setIter.next().value.should.eql(1)
     setIter.next().value.should.eql(2)
     setIter.next().value.should.eql(3)
+    setIter.next().done.should.equal(true);
   })
 
   it('should not error if passed non-iterable into addAll', () => {

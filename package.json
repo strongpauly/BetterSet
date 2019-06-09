@@ -1,12 +1,12 @@
 {
   "name": "betterset",
-  "version": "2.0.1",
+  "version": "3.0.0",
   "description": "An extension of the javascript Set object which contains useful Set operation methods",
   "main": "./lib/index.js",
   "types": "./src/main.d.ts",
   "scripts": {
     "build": "babel src --out-dir ./lib",
-    "test": "mocha --harmony --recursive --require babel-core/register -t 40000 test",
+    "test": "mocha --harmony --recursive --require @babel/register -t 40000 test",
     "coverage": "nyc npm run test",
     "coveralls": "npm run coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
@@ -27,17 +27,18 @@
   },
   "homepage": "https://github.com/strongpauly/BetterSet#readme",
   "devDependencies": {
-    "babel-cli": "^6.26.0",
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-transform-classes": "^7.4.4",
+    "@babel/plugin-transform-modules-commonjs": "^7.4.4",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/register": "^7.4.4",
     "babel-plugin-transform-builtin-extend": "^1.1.2",
-    "babel-plugin-transform-es2015-classes": "^6.24.1",
-    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
-    "babel-preset-env": "^1.7.0",
-    "chai": "^4.1.2",
+    "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
-    "coveralls": "^3.0.1",
-    "mocha": "^5.2.0",
-    "nyc": "^12.0.2",
-    "standard": "^11.0.1"
+    "coveralls": "^3.0.4",
+    "mocha": "^6.1.4",
+    "nyc": "^14.0.0"
   },
   "nyc": {
     "reporter": [
