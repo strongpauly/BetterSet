@@ -37,7 +37,7 @@
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
     "coveralls": "^3.0.4",
-    "mocha": "^6.1.4",
+    "mocha": "^10.2.0",
     "nyc": "^14.0.0"
   },
   "nyc": {
