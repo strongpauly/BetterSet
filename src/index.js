@@ -8,12 +8,22 @@ export default class BetterSet extends Set {
    * Add all items in an iterable to this set.
    */
   addAll(iterable) {
-    if (!iterable || typeof iterable.forEach !== 'function') {
-      return
+    if (!iterable) {
+      return;
     }
-    iterable.forEach(item => {
-      this.add(item)
-    })
+    if(typeof iterable.forEach === 'function') {
+      iterable.forEach(item => {
+        this.add(item)
+      })
+      return;
+    }
+    if(typeof iterable.next === 'function') {
+      let next = iterable.next();
+      while(typeof next?.value !== 'undefined') {
+        this.add(next.value)
+        next = iterable.next()
+      }
+    }
   }
 
   /**
@@ -29,7 +39,7 @@ export default class BetterSet extends Set {
    * Returns a union of this set with another Set or iterable.
    */
   union(otherSet) {
-    let newSet = new BetterSet(this);
+    const newSet = new BetterSet(this);
     newSet.addAll(otherSet);
     return newSet;
   }
@@ -38,7 +48,7 @@ export default class BetterSet extends Set {
    * Returns an intersection of this set with another Set.
    */
   intersection(otherSet) {
-    let newSet = new BetterSet();
+    const newSet = new BetterSet();
     this.forEach(item => {
       if (otherSet.has(item)) {
         newSet.add(item);
@@ -61,7 +71,7 @@ export default class BetterSet extends Set {
    * i.e. all the items that are in this set, but not in the other.
    */
   relativeComplement(otherSet) {
-    let newSet = new BetterSet();
+    const newSet = new BetterSet();
     this.forEach(item => {
       if (!otherSet.has(item)) {
         newSet.add(item);

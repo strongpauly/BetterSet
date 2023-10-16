@@ -221,6 +221,21 @@ describe('Set', function () {
     setIter.next().done.should.equal(true)
   })
 
+  it('should addAll map keys', () => {
+    const map = new Map()
+    map.set(1, 1)
+    map.set(2, 1)
+
+    let set = new Set([])
+
+    set.addAll(map.keys())
+
+    let setIter = set.values()
+    setIter.next().value.should.eql(1)
+    setIter.next().value.should.eql(2)
+    setIter.next().done.should.equal(true)
+  })
+
   it('should remove all items from deleteAll', () => {
     let set = new Set([1, 2, 3])
     let setIter = set.values()
