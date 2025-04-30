@@ -1,4 +1,4 @@
-export default class BetterSet<T> extends Set<T> {
+export class BetterSet<T> extends Set<T> {
     /**
     * Add all items in an iterable to this set.
     */
@@ -58,3 +58,5 @@ export default class BetterSet<T> extends Set<T> {
     */
     reduce<U>(callbackfn: (previousValue: U, currentValue: T, currentIndex: number, array: T[]) => U, initialValue: U): U;
 }
+
+export default BetterSet

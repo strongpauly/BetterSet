@@ -1,6 +1,6 @@
 {
   "name": "betterset",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "description": "An extension of the javascript Set object which contains useful Set operation methods",
   "main": "./lib/index.js",
   "types": "./src/main.d.ts",
@@ -27,23 +27,32 @@
   },
   "homepage": "https://github.com/strongpauly/BetterSet#readme",
   "devDependencies": {
-    "@babel/cli": "7.23.0",
-    "@babel/core": "7.23.0",
-    "@babel/plugin-transform-classes": "7.22.15",
-    "@babel/plugin-transform-modules-commonjs": "7.23.0",
-    "@babel/preset-env": "7.23.2",
-    "@babel/register": "7.22.15",
+    "@babel/cli": "7.27.0",
+    "@babel/core": "7.26.10",
+    "@babel/plugin-transform-classes": "7.25.9",
+    "@babel/plugin-transform-modules-commonjs": "7.26.3",
+    "@babel/preset-env": "7.26.9",
+    "@babel/register": "7.25.9",
     "babel-plugin-transform-builtin-extend": "1.1.2",
-    "chai": "4.3.10",
-    "chai-as-promised": "7.1.1",
+    "chai": "5.2.0",
+    "chai-as-promised": "8.0.1",
     "coveralls": "3.1.1",
-    "mocha": "10.2.0",
-    "nyc": "15.1.0"
+    "mocha": "11.1.0",
+    "nyc": "17.1.0"
   },
   "nyc": {
     "reporter": [
       "lcov",
       "text"
     ]
+  },
+  "module": "./src/index.js",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./src/index.js",
+      "require": "./lib/index.js",
+      "types": "./src/main.d.ts"
+    }
   }
 }

@@ -3,7 +3,7 @@
 /**
  * A set proxy that adds some useful methods that should (IMO) be part of the base spec.
  */
-export default class BetterSet extends Set {
+export class BetterSet extends Set {
   /**
    * Add all items in an iterable to this set.
    */
@@ -151,3 +151,5 @@ export default class BetterSet extends Set {
     return this.asArray().reduce(reduceFunction, initialValue);
   }
 }
+
+export default BetterSet;

@@ -1,10 +1,7 @@
 /* eslint-env node, mocha */
 /* jslint node: true */
 
-// Chai
-import chai from 'chai';
-
-// Chai Promises
+import * as chai from 'chai';
 import chaiAsPromised from 'chai-as-promised';
 
 import Set from '../src/index.js';
